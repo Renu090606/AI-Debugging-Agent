@@ -1,0 +1,14 @@
+{
+    "id": "type_error_04",
+    "category": "TypeError",
+    "description": "None returned from function used in arithmetic",
+    "difficulty": "medium",
+    "buggy_code": "def get_price(item):\n    prices = {\"apple\": 1.5, \"banana\": 0.75}\n    if item in prices:\n        return prices[item]\n    # Missing return for unknown items!\n\ntotal = get_price(\"apple\") + get_price(\"orange\")\nprint(f\"Total: ${total}\")",
+    "traceback": "Traceback (most recent call last):\n  File \"shop.py\", line 7, in <module>\n    total = get_price(\"apple\") + get_price(\"orange\")\nTypeError: unsupported operand type(s) for +: 'float' and 'NoneType'",
+    "ground_truth": {
+        "root_cause": "Function get_price() returns None implicitly when item is not in prices dict — missing else/default return value",
+        "error_type": "TypeError",
+        "error_line": 7,
+        "keywords": ["None", "return", "get_price", "orange", "missing", "implicit", "NoneType"]
+    }
+}

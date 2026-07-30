@@ -1,0 +1,14 @@
+{
+    "id": "attribute_error_01",
+    "category": "AttributeError",
+    "description": "Calling method on None (function forgot to return)",
+    "difficulty": "easy",
+    "buggy_code": "def find_user(users, name):\n    for user in users:\n        if user[\"name\"] == name:\n            return user\n    # Missing return None explicitly, but issue is caller assumes found\n\nusers = [{\"name\": \"Alice\", \"age\": 30}, {\"name\": \"Bob\", \"age\": 25}]\nresult = find_user(users, \"Charlie\")\nprint(result.upper())",
+    "traceback": "Traceback (most recent call last):\n  File \"find.py\", line 9, in <module>\n    print(result.upper())\nAttributeError: 'NoneType' object has no attribute 'upper'",
+    "ground_truth": {
+        "root_cause": "find_user() returns None when user not found (no match for 'Charlie') but caller tries to call .upper() on the result without checking for None",
+        "error_type": "AttributeError",
+        "error_line": 9,
+        "keywords": ["None", "find_user", "upper", "Charlie", "not found", "return", "NoneType"]
+    }
+}

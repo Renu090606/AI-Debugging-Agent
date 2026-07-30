@@ -1,0 +1,14 @@
+{
+    "id": "logic_bug_02",
+    "category": "Logic Bug",
+    "description": "Wrong comparison operator — uses < instead of <=",
+    "difficulty": "medium",
+    "buggy_code": "def is_passing(score):\n    \"\"\"Return True if score is 60 or above.\"\"\"\n    return score > 60\n\n# Test cases\nprint(is_passing(60))   # Expected: True, Got: False\nprint(is_passing(61))   # Expected: True, Got: True\nprint(is_passing(59))   # Expected: False, Got: False",
+    "traceback": "No exception raised.\nExpected: is_passing(60) should return True\nActual: is_passing(60) returns False\nThe boundary value 60 is not handled correctly.",
+    "ground_truth": {
+        "root_cause": "Uses 'score > 60' (strictly greater) but should be 'score >= 60' to include the boundary value 60",
+        "error_type": "Logic Bug",
+        "error_line": 3,
+        "keywords": [">", ">=", "60", "boundary", "greater than", "or equal", "comparison"]
+    }
+}

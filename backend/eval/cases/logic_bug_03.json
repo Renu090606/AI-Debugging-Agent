@@ -1,0 +1,14 @@
+{
+    "id": "logic_bug_03",
+    "category": "Logic Bug",
+    "description": "Mutable default argument causes shared state",
+    "difficulty": "hard",
+    "buggy_code": "def add_item(item, items=[]):\n    items.append(item)\n    return items\n\nlist1 = add_item(\"apple\")\nprint(list1)  # ['apple'] — correct\n\nlist2 = add_item(\"banana\")\nprint(list2)  # Expected: ['banana'], Got: ['apple', 'banana']",
+    "traceback": "No exception raised.\nExpected: add_item(\"banana\") returns ['banana']\nActual: add_item(\"banana\") returns ['apple', 'banana']\nThe default list is shared between calls.",
+    "ground_truth": {
+        "root_cause": "Mutable default argument items=[] is created once at function definition time and shared across all calls — should use None as default and create new list inside function",
+        "error_type": "Logic Bug",
+        "error_line": 1,
+        "keywords": ["mutable", "default", "argument", "shared", "[]", "None", "append", "same list"]
+    }
+}

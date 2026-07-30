@@ -1,0 +1,14 @@
+{
+    "id": "name_error_05",
+    "category": "NameError",
+    "description": "Variable shadowed by same-name function parameter",
+    "difficulty": "hard",
+    "buggy_code": "items = [1, 2, 3, 4, 5]\n\ndef process(items):\n    return [x * 2 for x in items]\n\nresult = process(items)\nfiltered = [x for x in items if x > 3]\n\ndef summarize():\n    total = sum(filtered)\n    avg = total / len(filtered)\n    print(f\"Sum: {total}, Avg: {avg}\")\n    print(f\"Original count: {len(items)}\")\n    items = []  # This line causes the issue\n\nsummarize()",
+    "traceback": "Traceback (most recent call last):\n  File \"shadow.py\", line 16, in <module>\n    summarize()\n  File \"shadow.py\", line 13, in summarize\n    print(f\"Original count: {len(items)}\")\nUnboundLocalError: cannot access local variable 'items' where it is not associated with a value",
+    "ground_truth": {
+        "root_cause": "Assignment 'items = []' on line 14 makes 'items' a local variable in summarize(), but it's read on line 13 before that assignment — UnboundLocalError due to shadowing",
+        "error_type": "NameError",
+        "error_line": 13,
+        "keywords": ["items", "local", "shadow", "UnboundLocal", "assignment", "before", "unbound"]
+    }
+}

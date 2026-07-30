@@ -1,0 +1,14 @@
+{
+    "id": "index_error_02",
+    "category": "IndexError",
+    "description": "Accessing element from empty list",
+    "difficulty": "medium",
+    "buggy_code": "def get_first(items):\n    return items[0]\n\nresults = []\nfirst = get_first(results)\nprint(first)",
+    "traceback": "Traceback (most recent call last):\n  File \"empty.py\", line 5, in <module>\n    first = get_first(results)\n  File \"empty.py\", line 2, in get_first\n    return items[0]\nIndexError: list index out of range",
+    "ground_truth": {
+        "root_cause": "Function get_first() accesses index 0 of 'items' but the list 'results' is empty — no check for empty list",
+        "error_type": "IndexError",
+        "error_line": 2,
+        "keywords": ["empty", "results", "items", "0", "empty list", "no check", "length"]
+    }
+}

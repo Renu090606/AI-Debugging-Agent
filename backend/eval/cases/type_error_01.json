@@ -1,0 +1,14 @@
+{
+    "id": "type_error_01",
+    "category": "TypeError",
+    "description": "Adding int and string together",
+    "difficulty": "easy",
+    "buggy_code": "age = 25\nmessage = \"I am \" + age + \" years old\"\nprint(message)",
+    "traceback": "Traceback (most recent call last):\n  File \"main.py\", line 2, in <module>\n    message = \"I am \" + age + \" years old\"\nTypeError: can only concatenate str (not \"int\") to str",
+    "ground_truth": {
+        "root_cause": "Variable 'age' is an int but is being concatenated with strings using + operator — needs str() conversion",
+        "error_type": "TypeError",
+        "error_line": 2,
+        "keywords": ["age", "int", "str", "concatenat", "convert", "type", "string"]
+    }
+}

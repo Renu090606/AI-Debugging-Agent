@@ -1,0 +1,14 @@
+{
+    "id": "name_error_02",
+    "category": "NameError",
+    "description": "Misspelled variable name",
+    "difficulty": "easy",
+    "buggy_code": "username = \"Alice\"\ngreeting = \"Hello, \" + usernme\nprint(greeting)",
+    "traceback": "Traceback (most recent call last):\n  File \"app.py\", line 2, in <module>\n    greeting = \"Hello, \" + usernme\nNameError: name 'usernme' is not defined",
+    "ground_truth": {
+        "root_cause": "Variable 'usernme' is a typo — should be 'username'",
+        "error_type": "NameError",
+        "error_line": 2,
+        "keywords": ["usernme", "typo", "misspell", "username", "not defined", "undefined"]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "id": "logic_bug_01",
+    "category": "Logic Bug",
+    "description": "Off-by-one in range — generates wrong number of elements",
+    "difficulty": "medium",
+    "buggy_code": "def generate_sequence(n):\n    \"\"\"Generate list of numbers from 1 to n inclusive.\"\"\"\n    return list(range(1, n))\n\nresult = generate_sequence(5)\nprint(result)  # Expected: [1, 2, 3, 4, 5], Got: [1, 2, 3, 4]",
+    "traceback": "No exception raised.\nExpected output: [1, 2, 3, 4, 5]\nActual output: [1, 2, 3, 4]\nThe function returns one fewer element than expected.",
+    "ground_truth": {
+        "root_cause": "range(1, n) goes up to n-1, not n — should be range(1, n+1) to include n",
+        "error_type": "Logic Bug",
+        "error_line": 3,
+        "keywords": ["range", "n+1", "off by one", "exclusive", "inclusive", "1, n"]
+    }
+}

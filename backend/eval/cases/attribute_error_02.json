@@ -1,0 +1,14 @@
+{
+    "id": "attribute_error_02",
+    "category": "AttributeError",
+    "description": "Misspelled method name on string",
+    "difficulty": "medium",
+    "buggy_code": "text = \"Hello, World!\"\nwords = text.spllit(\", \")\nprint(words)",
+    "traceback": "Traceback (most recent call last):\n  File \"text.py\", line 2, in <module>\n    words = text.spllit(\", \")\nAttributeError: 'str' object has no attribute 'spllit'",
+    "ground_truth": {
+        "root_cause": "Method 'spllit' is a typo — should be 'split' (double 'l')",
+        "error_type": "AttributeError",
+        "error_line": 2,
+        "keywords": ["spllit", "split", "typo", "misspell", "attribute", "str"]
+    }
+}

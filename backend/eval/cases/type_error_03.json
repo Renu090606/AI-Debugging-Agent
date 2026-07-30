@@ -1,0 +1,14 @@
+{
+    "id": "type_error_03",
+    "category": "TypeError",
+    "description": "Wrong number of arguments to function",
+    "difficulty": "medium",
+    "buggy_code": "def multiply(a, b):\n    return a * b\n\nresult = multiply(3, 4, 5)\nprint(result)",
+    "traceback": "Traceback (most recent call last):\n  File \"math_ops.py\", line 4, in <module>\n    result = multiply(3, 4, 5)\nTypeError: multiply() takes 2 positional arguments but 3 were given",
+    "ground_truth": {
+        "root_cause": "Function multiply() accepts 2 parameters (a, b) but was called with 3 arguments (3, 4, 5)",
+        "error_type": "TypeError",
+        "error_line": 4,
+        "keywords": ["multiply", "argument", "parameter", "2", "3", "positional", "takes"]
+    }
+}

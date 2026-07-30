@@ -1,0 +1,14 @@
+{
+    "id": "name_error_01",
+    "category": "NameError",
+    "description": "Undefined variable in arithmetic expression",
+    "difficulty": "easy",
+    "buggy_code": "x = 10\nresult = x + y\nprint(result)",
+    "traceback": "Traceback (most recent call last):\n  File \"main.py\", line 2, in <module>\n    result = x + y\nNameError: name 'y' is not defined",
+    "ground_truth": {
+        "root_cause": "Variable 'y' is used but never defined or assigned",
+        "error_type": "NameError",
+        "error_line": 2,
+        "keywords": ["y", "undefined", "not defined", "never assigned", "never declared", "not declared"]
+    }
+}

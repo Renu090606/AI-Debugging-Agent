@@ -1,0 +1,14 @@
+{
+    "id": "index_error_03",
+    "category": "IndexError",
+    "description": "Wrong loop boundary causes index overflow",
+    "difficulty": "medium",
+    "buggy_code": "data = [10, 20, 30, 40, 50]\n\ntotal = 0\nfor i in range(len(data) + 1):\n    total += data[i]\n\nprint(f\"Total: {total}\")",
+    "traceback": "Traceback (most recent call last):\n  File \"loop.py\", line 5, in <module>\n    total += data[i]\nIndexError: list index out of range",
+    "ground_truth": {
+        "root_cause": "Loop uses range(len(data) + 1) which goes from 0 to 5, but valid indices are 0-4 — should be range(len(data))",
+        "error_type": "IndexError",
+        "error_line": 5,
+        "keywords": ["range", "len", "+ 1", "boundary", "loop", "5", "data", "off by one"]
+    }
+}

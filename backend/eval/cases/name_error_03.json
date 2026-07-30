@@ -1,0 +1,14 @@
+{
+    "id": "name_error_03",
+    "category": "NameError",
+    "description": "Variable used before assignment in conditional",
+    "difficulty": "medium",
+    "buggy_code": "score = 75\n\nif score >= 90:\n    grade = \"A\"\nelif score >= 80:\n    grade = \"B\"\n\nprint(f\"Your grade is: {grade}\")",
+    "traceback": "Traceback (most recent call last):\n  File \"grades.py\", line 8, in <module>\n    print(f\"Your grade is: {grade}\")\nNameError: name 'grade' is not defined",
+    "ground_truth": {
+        "root_cause": "Variable 'grade' is only assigned inside if/elif branches that don't execute when score is 75 — no else clause",
+        "error_type": "NameError",
+        "error_line": 8,
+        "keywords": ["grade", "not defined", "conditional", "else", "branch", "not assigned", "if", "elif"]
+    }
+}

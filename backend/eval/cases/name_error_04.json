@@ -1,0 +1,14 @@
+{
+    "id": "name_error_04",
+    "category": "NameError",
+    "description": "Variable defined in function scope, used outside",
+    "difficulty": "medium",
+    "buggy_code": "def calculate():\n    total = 100\n    tax = total * 0.1\n    return tax\n\ncalculate()\nprint(f\"Tax amount: {tax}\")",
+    "traceback": "Traceback (most recent call last):\n  File \"tax.py\", line 7, in <module>\n    print(f\"Tax amount: {tax}\")\nNameError: name 'tax' is not defined",
+    "ground_truth": {
+        "root_cause": "Variable 'tax' is defined inside function calculate() but accessed in global scope — local variable not accessible outside function",
+        "error_type": "NameError",
+        "error_line": 7,
+        "keywords": ["tax", "scope", "local", "function", "not defined", "inside", "outside"]
+    }
+}

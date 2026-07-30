@@ -1,0 +1,14 @@
+{
+    "id": "type_error_02",
+    "category": "TypeError",
+    "description": "Calling an integer as if it were a function",
+    "difficulty": "easy",
+    "buggy_code": "count = 5\nresult = count(10)\nprint(result)",
+    "traceback": "Traceback (most recent call last):\n  File \"main.py\", line 2, in <module>\n    result = count(10)\nTypeError: 'int' object is not callable",
+    "ground_truth": {
+        "root_cause": "Variable 'count' is an integer (5) but is being called as a function with parentheses — int is not callable",
+        "error_type": "TypeError",
+        "error_line": 2,
+        "keywords": ["count", "not callable", "int", "function", "call", "parenthes"]
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "id": "index_error_01",
+    "category": "IndexError",
+    "description": "Off-by-one error accessing list",
+    "difficulty": "easy",
+    "buggy_code": "fruits = [\"apple\", \"banana\", \"cherry\"]\nlast_fruit = fruits[3]\nprint(last_fruit)",
+    "traceback": "Traceback (most recent call last):\n  File \"fruits.py\", line 2, in <module>\n    last_fruit = fruits[3]\nIndexError: list index out of range",
+    "ground_truth": {
+        "root_cause": "List 'fruits' has 3 elements (indices 0-2) but index 3 is accessed — off by one, should use index 2 or -1",
+        "error_type": "IndexError",
+        "error_line": 2,
+        "keywords": ["fruits", "index", "3", "range", "out of range", "off by one", "0-2", "length"]
+    }
+}

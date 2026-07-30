@@ -1,0 +1,14 @@
+{
+    "id": "logic_bug_04",
+    "category": "Logic Bug",
+    "description": "Integer division truncates when float expected",
+    "difficulty": "hard",
+    "buggy_code": "def calculate_average(numbers):\n    total = sum(numbers)\n    count = len(numbers)\n    average = total // count  # Bug: integer division\n    return average\n\nscores = [85, 90, 78, 92, 88]\navg = calculate_average(scores)\nprint(f\"Average: {avg}\")  # Expected: 86.6, Got: 86",
+    "traceback": "No exception raised.\nExpected output: Average: 86.6\nActual output: Average: 86\nThe average is truncated to an integer instead of being a float.",
+    "ground_truth": {
+        "root_cause": "Uses integer division operator // which truncates the result — should use / for true division to get float result",
+        "error_type": "Logic Bug",
+        "error_line": 4,
+        "keywords": ["//", "/", "integer division", "floor", "truncat", "float", "true division"]
+    }
+}
