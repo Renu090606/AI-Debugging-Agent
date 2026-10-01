@@ -1,20 +1,9 @@
+
 # AI Debugging Agent
 
-A ReAct-based agentic AI system that autonomously debugs Python errors through hypothesis-elimination — like a doctor diagnosing a patient.
+An AI debugging agent that investigates Python errors by generating hypotheses, gathering evidence through static analysis tools, and eliminating possible root causes before suggesting a fix.
 
-Paste your buggy Python code and traceback, and the agent generates hypotheses, runs static analysis tools (AST analyzer, linter, variable tracker), updates beliefs based on evidence, self-critiques its reasoning, and produces a root cause diagnosis with a concrete fix suggestion.
-
-## Live Demo
-
-> Coming soon — [https://ai-debug.vercel.app](https://ai-debug.vercel.app)
-
-## Screenshots
-
-| Dark Mode | Light Mode |
-|---|---|
-| ![Dark Mode](docs/screenshots/dark.png) | ![Light Mode](docs/screenshots/light.png) |
-
-*Add screenshots after running the app locally*
+The agent follows a ReAct-based workflow: it generates hypotheses, uses an AST analyzer, linter, and variable tracker to gather evidence, updates its beliefs, self-critiques its reasoning, and produces a root-cause diagnosis with a concrete fix suggestion.
 
 ## Tech Stack
 
@@ -127,10 +116,11 @@ Open http://localhost:5173
 
 | Metric | Value |
 |---|---|
-| Accuracy | 100% (16/16 completed) |
-| Avg Iterations | 2.5 |
-| Avg Confidence | 0.47 (conservative by design) |
-| Error Types | NameError, TypeError, IndexError, AttributeError, Logic Bugs |
+| Curated test cases | 16 |
+| Correct diagnoses  | 16/16 |
+| Avg Iterations     | 2.5 |
+| Avg Confidence     | 0.47 |
+Evaluated on 16 curated Python debugging cases covering NameError, TypeError, IndexError, AttributeError, and logic bugs.
 
 Run the eval yourself:
 ```bash
