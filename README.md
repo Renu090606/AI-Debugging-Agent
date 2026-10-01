@@ -41,7 +41,7 @@ Backend (FastAPI)
 
 ## Key Features
 
-- **Autonomous debugging** — no human prompts needed between steps
+- **Agentic debugging** — autonomously investigates hypotheses and gathers evidence using available tools
 - **Hypothesis-elimination** — 3-5 candidates ranked by probability, systematically tested
 - **Tool-grounded reasoning** — runs real static analysis, not just LLM guessing
 - **Bayesian belief updates** — probabilities adjusted based on tool evidence
